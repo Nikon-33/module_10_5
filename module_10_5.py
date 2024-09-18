@@ -5,8 +5,9 @@ from datetime import datetime
 def read_info(name):
     all_data = []
     with open(name, "r", encoding='utf-8') as file:
-        lines = file.read().split()
-        all_data.append(lines)
+        lines = file.readlines()
+        for line in lines:
+            all_data.append(line.strip())
 
 
 if __name__ == '__main__':
